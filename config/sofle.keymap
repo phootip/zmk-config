@@ -12,21 +12,38 @@
     macros {
         tab_left: tab_left {
             compatible = "zmk,behavior-macro";
-            label = "new_macro";
+            label = "go to left tab";
             #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             bindings = <&kp LGUI &kp LEFT_BRACE>;
-        };
-        terminal: terminal {
-            compatible = "zmk,behavior-macro";
-            label = "new_macro";
-            #binding-cells = <0>;
-            bindings = <&kp LALT &kp GRAVE>;
+                = <&macro_press   &kp LGUI>
+                , <&macro_tap     &kp LEFT_BRACE>
+                , <&macro_release &kp LGUI>
         };
         tab_right: tab_right {
             compatible = "zmk,behavior-macro";
-            label = "new_macro";
+            label = "go to right tab";
             #binding-cells = <0>;
-            bindings = <&kp LGUI &kp LSHIFT &kp RIGHT_BRACKET>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LGUI &kp LSHIFT>
+                , <&macro_tap     &kp RIGHT_BRACKET>
+                , <&macro_release &kp LSHIFT &kp LGUI>
+            ;
+        };
+        terminal: terminal {
+            compatible = "zmk,behavior-macro";
+            label = "toggle terminal";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp GRAVE>
+                , <&macro_release &kp LALT>
+            ;
         };
     };
 
