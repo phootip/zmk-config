@@ -20,6 +20,7 @@
                 = <&macro_press   &kp LGUI>
                 , <&macro_tap     &kp LEFT_BRACE>
                 , <&macro_release &kp LGUI>
+            ;
         };
         tab_right: tab_right {
             compatible = "zmk,behavior-macro";
