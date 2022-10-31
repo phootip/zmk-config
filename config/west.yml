@@ -8,7 +8,7 @@ manifest:
     - name: zmk
 #       remote: zmkfirmware
       remote: infused-kim
-      revision: phoo/right-encoder
+      revision: my-changes/split-encoder
       import: app/west.yml
   self:
     path: config
