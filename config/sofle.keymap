@@ -93,7 +93,7 @@
             //              |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
- &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &kp UNDERSCORE   &kp PLUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS         &trans   &kp DEL
+ &kp ESC  &kp N1     &kp N2    &kp N3    &kp N4  &kp N5                  &kp UNDERSCORE   &kp PLUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS         &trans   &kp DEL
      &trans       &kp INS     &kp PSCRN   &kp K_CMENU        &trans        &trans                       &kp MINUS  &kp EQUAL      &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &kp LG(LS(P))    &trans
      &trans         &to 0         &to 1     &kp LSHFT        &trans      &kp CLCK                        &kp LEFT   &kp DOWN                &kp UP              &kp RIGHT        &kp DEL  &kp BSPC
      &trans    &kp K_UNDO     &kp K_CUT    &kp K_COPY   &kp K_PASTE        &trans  &trans  &trans       &kp PG_UP  &kp PG_DN        &kp LEFT_BRACE        &kp RIGHT_BRACE         &trans    &trans
