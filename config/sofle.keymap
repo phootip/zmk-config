@@ -23,7 +23,13 @@
                 <&caps_word>;
         };
     };
-
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <2 3>;
+            then-layer = <4>;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
 
@@ -90,6 +96,25 @@
  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &kp UNDERSCORE   &kp PLUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS         &trans   &kp DEL
      &trans       &kp INS     &kp PSCRN   &kp K_CMENU        &trans        &trans                       &kp MINUS  &kp EQUAL      &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &kp LG(LS(P))    &trans
      &trans         &to 0         &to 1     &kp LSHFT        &trans      &kp CLCK                        &kp LEFT   &kp DOWN                &kp UP              &kp RIGHT        &kp DEL  &kp BSPC
+     &trans    &kp K_UNDO     &kp K_CUT    &kp K_COPY   &kp K_PASTE        &trans  &trans  &trans       &kp PG_UP  &kp PG_DN        &kp LEFT_BRACE        &kp RIGHT_BRACE         &trans    &trans
+                                 &trans        &trans        &trans        &trans  &trans  &trans          &trans     &trans                &trans                 &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        Layer__4 {
+            // ------------------------------------------------------------------------------------------------------------
+            // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
+            // |     | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
+            // |     | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
+            // |     | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
+            //              |      |       |       |      |      |  |      |      |      |       |      |
+
+            bindings = <
+ &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &kp UNDERSCORE   &kp PLUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS         &trans   &kp DEL
+     &trans       &kp A     &kp W   &kp K_CMENU        &trans        &trans                       &kp MINUS  &kp EQUAL      &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &kp LG(LS(P))    &trans
+     &trans         &kp A         &kp S     &kp D        &trans      &kp CLCK                        &kp LEFT   &kp DOWN                &kp UP              &kp RIGHT        &kp DEL  &kp BSPC
      &trans    &kp K_UNDO     &kp K_CUT    &kp K_COPY   &kp K_PASTE        &trans  &trans  &trans       &kp PG_UP  &kp PG_DN        &kp LEFT_BRACE        &kp RIGHT_BRACE         &trans    &trans
                                  &trans        &trans        &trans        &trans  &trans  &trans          &trans     &trans                &trans                 &trans
             >;
