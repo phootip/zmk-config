@@ -34,6 +34,26 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        left {
+            bindings = <&kp LC(LEFT)>;
+            key-positions = <16 15 14>;
+            layers = <0>;
+        };
+
+        ctrl-right {
+            bindings = <&kp LC(RIGHT)>;
+            key-positions = <17 16 15>;
+        };
+
+        ctrl-right {
+            bindings = <&kp LC(RIGHT)>;
+            key-positions = <19 20 21>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
