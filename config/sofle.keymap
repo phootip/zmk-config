@@ -48,7 +48,7 @@
             key-positions = <17 16 15>;
         };
 
-        ctrl-right {
+        right-ctrl-right {
             bindings = <&kp LC(RIGHT)>;
             key-positions = <19 20 21>;
         };
