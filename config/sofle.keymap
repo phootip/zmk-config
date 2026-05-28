@@ -34,8 +34,16 @@
             #binding-cells = <0>;
 
             terminal {
-                sequence = <G T>;
+                sequence = <F T>;
                 bindings = <&terminal_macro>;
+            };
+            chat {
+                sequence = <F C>;
+                bindings = <&chat_macro>;
+            };
+            browser {
+                sequence = <F B>;
+                bindings = <&browser_macro>;
             };
         };
     };
@@ -48,7 +56,37 @@
                 = <&macro_press &kp LALT>
                 , <&macro_tap &kp SPACE>
                 , <&macro_release &kp LALT>
+                /* ghostty */
                 , <&macro_tap &kp G>
+                , <&macro_wait_time 50>
+                , <&macro_tap &kp RET>
+                ;
+        };
+
+        chat_macro: chat_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp SPACE>
+                , <&macro_release &kp LALT>
+                /* microsoft team */
+                , <&macro_tap &kp T>
+                , <&macro_wait_time 50>
+                , <&macro_tap &kp RET>
+                ;
+        };
+
+        browser_macro: browser_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp SPACE>
+                , <&macro_release &kp LALT>
+                /* Edge */
+                , <&macro_tap &kp E>
+                , <&macro_wait_time 50>
                 , <&macro_tap &kp RET>
                 ;
         };
@@ -97,7 +135,7 @@
 &kp TAB     &kp Q   &kp W      &kp E     &kp R     &kp T                                         &kp Y   &kp U      &kp I      &kp O     &kp P     &kp BACKSLASH
 &kp LCTRL   &kp A   &kp S      &kp D     &kp F     &kp G                                         &kp H   &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
 &kp LSHIFT  &kp Z   &kp X      &kp C     &kp V     &kp B   &kp C_MUTE        &kp LC(N0)          &kp N   &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                    &kp LCTRL  &kp LALT  &kp LGUI  &mo 2   &mt LSHIFT SPACE  &mt LEFT_ALT ENTER  &leader_lt 3 0   &kp RCTRL  &kp RALT   &kp RGUI
+                    &kp LCTRL  &kp LALT  &kp LGUI  &leader_lt 2 0   &mt LSHIFT SPACE  &mt LEFT_ALT ENTER  &leader_lt 3 0   &kp RCTRL  &kp RALT   &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LC(PLUS) LC(MINUS)>;
