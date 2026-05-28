@@ -18,6 +18,19 @@
             tapping-term-ms = <200>;
             bindings = <&sk LSHFT>, <&caps_word>;
         };
+        leader1: leader1 {
+            compatible = "zmk,behavior-leader-key";
+            #binding-cells = <0>;
+            terminal { sequence = <G T>; bindings = <&kp T &kp E &kp R &kp M &kp I &kp N &kp A &kp L>; };
+        };
+    };
+
+    macros {
+        terminal_macro: terminal_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp T &kp E &kp R &kp M &kp I &kp N &kp A &kp L>;
+        };
     };
 
     conditional_layers {
